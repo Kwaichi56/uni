@@ -13,3 +13,17 @@ venv/
 ~$*.xlsx
 ~$*.ppt
 ~$*.pptx
+
+# Настройки и кэш Visual Studio
+**/.vs/
+.vs/
+*.user
+
+# Результаты сборки (C++)
+**/x64/
+**/x86/
+**/Debug/
+**/Release/
+*.pch
+*.ipch
+*.obj
