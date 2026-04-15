@@ -1,0 +1,11 @@
+D:\BSTU\Labs\PP\lab1\DP001_lib\bin\Debug\net10.0\DP001_lib.deps.json
+D:\BSTU\Labs\PP\lab1\DP001_lib\bin\Debug\net10.0\DP001_lib.dll
+D:\BSTU\Labs\PP\lab1\DP001_lib\bin\Debug\net10.0\DP001_lib.pdb
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\DP001_lib.GeneratedMSBuildEditorConfig.editorconfig
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\DP001_lib.AssemblyInfoInputs.cache
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\DP001_lib.AssemblyInfo.cs
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\DP001_lib.csproj.CoreCompileInputs.cache
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\DP001_lib.dll
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\refint\DP001_lib.dll
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\DP001_lib.pdb
+D:\BSTU\Labs\PP\lab1\DP001_lib\obj\Debug\net10.0\ref\DP001_lib.dll

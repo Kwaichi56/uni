@@ -1,0 +1,27 @@
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\bin\Debug\DP007_json.dll
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\bin\Debug\DP007_json.pdb
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\bin\Debug\DP007_ICelebrity.dll
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\bin\Debug\DP007_ICelebrity.pdb
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.AssemblyReference.cache
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.CoreCompileInputs.cache
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.Up2Date
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\obj\Debug\DP007_json.dll
+C:\Users\Local administator\source\repos\DP007_json_test\DP007_json\obj\Debug\DP007_json.pdb
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\bin\Debug\DP007_json.dll
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\bin\Debug\DP007_json.pdb
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\bin\Debug\DP007_ICelebrity.dll
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\bin\Debug\DP007_ICelebrity.pdb
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.AssemblyReference.cache
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.CoreCompileInputs.cache
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.Up2Date
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\obj\Debug\DP007_json.dll
+C:\Users\Local administator\source\repos\Pattern\DP007_json_test\DP007_json\obj\Debug\DP007_json.pdb
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\bin\Debug\DP007_json.dll
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\bin\Debug\DP007_json.pdb
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\bin\Debug\DP007_ICelebrity.dll
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\bin\Debug\DP007_ICelebrity.pdb
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.AssemblyReference.cache
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.CoreCompileInputs.cache
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\obj\Debug\DP007_json.csproj.Up2Date
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\obj\Debug\DP007_json.dll
+C:\Users\ThinkPad\Downloads\DP007_json_test\DP007_json_test\DP007_json\obj\Debug\DP007_json.pdb

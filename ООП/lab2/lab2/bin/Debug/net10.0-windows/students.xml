@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <FullName>Владимир</FullName>
+    <Age>23</Age>
+    <Speciality>Программная инженерия</Speciality>
+    <BirthDate>2003-03-10T00:00:00+02:00</BirthDate>
+    <Course>1</Course>
+    <Group>ПИ6</Group>
+    <AverageScore>6</AverageScore>
+    <Gender>М</Gender>
+    <Address>
+      <City />
+      <Zip />
+      <Street />
+      <House />
+      <Apartment />
+    </Address>
+  </Student>
+</ArrayOfStudent>

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../DP001_lib/DP001_lib.csproj" />
+  <Project Path="lab01_PP.csproj" />
+</Solution>

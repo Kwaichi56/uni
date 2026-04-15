@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfStudent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Student>
+    <FullName>Владимир</FullName>
+    <Age>32</Age>
+    <Speciality>Программная инженерия</Speciality>
+    <BirthDate>1994-03-10T00:00:00+02:00</BirthDate>
+    <Course>2</Course>
+    <Group>ПИ4</Group>
+    <AverageScore>7</AverageScore>
+    <Gender>М</Gender>
+    <Address>
+      <City />
+      <Zip />
+      <Street />
+      <House />
+      <Apartment />
+    </Address>
+    <Job>
+      <Company>БЧ</Company>
+      <Position>Админ</Position>
+      <Experience>7</Experience>
+    </Job>
+  </Student>
+  <Student>
+    <FullName>Елена</FullName>
+    <Age>18</Age>
+    <Speciality>Экономика</Speciality>
+    <BirthDate>2007-11-15T00:00:00</BirthDate>
+    <Course>1</Course>
+    <Group>ЭКМ1</Group>
+    <AverageScore>5.3</AverageScore>
+    <Gender>Ж</Gender>
+    <Address>
+      <City />
+      <Zip />
+      <Street />
+      <House />
+      <Apartment />
+    </Address>
+  </Student>
+</ArrayOfStudent>

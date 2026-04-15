@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../pp00Lib/pp00Lib.csproj" />
+  <Project Path="pp00.csproj" />
+</Solution>

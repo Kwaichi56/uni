@@ -1,0 +1,15 @@
+# Установочные файлы
+*.exe
+*.msix
+
+# Виртуальное окружение Python
+**/venv/
+venv/
+
+# Временные файлы Microsoft Office
+~$*.doc
+~$*.docx
+~$*.xls
+~$*.xlsx
+~$*.ppt
+~$*.pptx
