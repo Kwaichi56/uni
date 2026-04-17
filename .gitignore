@@ -5,6 +5,7 @@
 # Виртуальное окружение Python
 **/venv/
 venv/
+.venv/
 
 # Временные файлы Microsoft Office
 ~$*.doc
