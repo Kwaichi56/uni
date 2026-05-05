@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\WPFShop.csproj",
-      "projectName": "WPFShop",
-      "projectPath": "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\WPFShop.csproj",
+      "projectUniqueName": "C:\\Users\\yudo\\Downloads\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\SportNutritionShop.csproj",
+      "projectName": "SportNutritionShop",
+      "projectPath": "C:\\Users\\yudo\\Downloads\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\SportNutritionShop.csproj",
       "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
-      "outputPath": "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\obj\\",
+      "outputPath": "C:\\Users\\yudo\\Downloads\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
