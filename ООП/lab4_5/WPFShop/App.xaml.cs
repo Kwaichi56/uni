@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace lab4_5
+namespace WPFShop
 {
     /// <summary>
     /// Interaction logic for App.xaml

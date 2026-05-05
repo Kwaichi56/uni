@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSTU\\Labs\\ООП\\lab4_5\\lab4_5\\lab4_5.csproj": {}
+    "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\WPFShop.csproj": {}
   },
   "projects": {
-    "D:\\BSTU\\Labs\\ООП\\lab4_5\\lab4_5\\lab4_5.csproj": {
+    "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\WPFShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\ООП\\lab4_5\\lab4_5\\lab4_5.csproj",
-        "projectName": "lab4_5",
-        "projectPath": "D:\\BSTU\\Labs\\ООП\\lab4_5\\lab4_5\\lab4_5.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\ООП\\lab4_5\\lab4_5\\obj\\",
+        "projectUniqueName": "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\WPFShop.csproj",
+        "projectName": "WPFShop",
+        "projectPath": "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\WPFShop.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\ООП\\lab4_5\\WPFShop\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,7 +25,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net10.0-windows7.0": {
+          "net10.0-windows": {
+            "framework": "net10.0-windows7.0",
             "targetAlias": "net10.0-windows",
             "projectReferences": {}
           }
@@ -47,7 +44,8 @@
         "SdkAnalysisLevel": "10.0.200"
       },
       "frameworks": {
-        "net10.0-windows7.0": {
+        "net10.0-windows": {
+          "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "imports": [
             "net461",
@@ -68,7 +66,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
