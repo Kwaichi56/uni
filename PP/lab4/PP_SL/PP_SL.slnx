@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../service-locator/service-locator-lab/ServiceLocator/ServiceLocator.csproj" />
+  <Project Path="../service-locator/service-locator-lab/Test_ServiceLocator/Test_ServiceLocator.csproj" />
+  <Project Path="PP_SL.csproj" />
+</Solution>
