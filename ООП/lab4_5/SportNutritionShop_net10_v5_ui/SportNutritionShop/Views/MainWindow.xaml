@@ -6,6 +6,8 @@
         Width="1440" Height="860" MinWidth="1180" MinHeight="720"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource BackgroundBrush}"
+        Cursor="/Assets/Cursors/shop.cur"
+        ForceCursor="True"
         Icon="/Assets/App.ico">
     <DockPanel>
         <Border DockPanel.Dock="Top" Background="White" BorderBrush="{StaticResource BorderBrush}" BorderThickness="0,0,0,1" Padding="20,14">

@@ -7,6 +7,8 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource BackgroundBrush}"
+        Cursor="/Assets/Cursors/shop.cur"
+        ForceCursor="True"
         Icon="/Assets/App.ico">
     <Grid Margin="24">
         <Border Style="{StaticResource CardBorderStyle}" Padding="24">
