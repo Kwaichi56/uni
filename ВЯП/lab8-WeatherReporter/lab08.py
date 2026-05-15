@@ -448,7 +448,7 @@ async def on_document(message: Message):
 
 @dp.message(F.sticker)
 async def on_sticker(message: Message):
-    await message.answer("Стикер получил 😄 Но для прогноза нужен город текстом.")
+    await message.answer("Стикер получил. Но для прогноза нужен город текстом.")
 
 
 @dp.message(F.text)
