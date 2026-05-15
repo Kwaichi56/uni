@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SubtleCrypto — Вариант 9 (AES-CBC + SHA-1)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; line-height: 1.45; }
+    code, pre { background: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h2>SubtleCrypto: AES-CBC + SHA-1 + AES-KW + ECDSA</h2>
+  <p>Откройте DevTools (F12) → Console, чтобы увидеть результаты выполнения.</p>
+
+  <script>
+    function bufToHex(buf) {
+      return Array.from(new Uint8Array(buf))
+        .map(b => b.toString(16).padStart(2, '0'))
+        .join('');
+    }
+
+    function shortKeyInfo(key) {
+      return {
+        type: key.type,
+        extractable: key.extractable,
+        algorithm: key.algorithm,
+        usages: key.usages
+      };
+    }
+
+    (
+        
+    async function main() {
+      const surname = 'Charadnichenka';
+      const encoder = new TextEncoder();
+      const decoder = new TextDecoder();
+      const msgData = encoder.encode(surname);
+
+
+      console.log('=== Задание 2: Генерация случайных чисел ===');
+      const arr = new Uint8Array(1);
+      for (let i = 0; i < 5; i++) {
+        crypto.getRandomValues(arr);
+        console.log(`Случайное число [${i}]:`, arr[0]);
+      }
+
+      console.log('\n=== Задание 3а: Хеширование SHA-1 ===');
+      const hashBuf = await crypto.subtle.digest('SHA-1', msgData);
+      const hashHex = bufToHex(hashBuf);
+      console.log('Фамилия:', surname);
+      console.log('SHA-1 (hex):', hashHex);
+
+
+      console.log('\n=== Задание 3б: Генерация ключа AES-CBC ===');
+      const aesCbcKey = await crypto.subtle.generateKey(
+        { name: 'AES-CBC', length: 128 },
+        true,
+        ['encrypt', 'decrypt']
+      );
+      console.log('AES-CBC ключ:', shortKeyInfo(aesCbcKey));
+
+
+      console.log('\n=== Задание 3в: Шифрование и дешифрование AES-CBC ===');
+      const iv = crypto.getRandomValues(new Uint8Array(16));
+      const cipherBuf = await crypto.subtle.encrypt(
+        { name: 'AES-CBC', iv },
+        aesCbcKey,
+        msgData
+      );
+      console.log('IV (hex):', bufToHex(iv.buffer));
+      console.log('Шифротекст (hex):', bufToHex(cipherBuf));
+      const plainBuf = await crypto.subtle.decrypt(
+        { name: 'AES-CBC', iv },
+        aesCbcKey,
+        cipherBuf
+      );
+      console.log('Расшифрованная строка:', decoder.decode(plainBuf));
+
+
+
+      console.log('\n=== Задание 4: Упаковка и распаковка ключа AES-KW ===');
+      const wrappingKey = await crypto.subtle.generateKey(
+        { name: 'AES-KW', length: 256 },
+        true,
+        ['wrapKey', 'unwrapKey']
+      );
+      console.log('AES-KW ключ:', shortKeyInfo(wrappingKey));
+      const wrappedKeyBuf = await crypto.subtle.wrapKey(
+        'raw',
+        aesCbcKey,
+        wrappingKey,
+        'AES-KW'
+      );
+      console.log('Упакованный ключ (hex):', bufToHex(wrappedKeyBuf));
+      const unwrappedKey = await crypto.subtle.unwrapKey(
+        'raw',
+        wrappedKeyBuf,
+        wrappingKey,
+        { name: 'AES-KW', length: 256 },
+        { name: 'AES-CBC', length: 128 },
+        true,
+        ['encrypt', 'decrypt']
+      );
+
+      console.log('Распакованный ключ:', shortKeyInfo(unwrappedKey));
+      const checkCipher = await crypto.subtle.encrypt({ name: 'AES-CBC', iv }, unwrappedKey, msgData);
+      const checkPlain = await crypto.subtle.decrypt({ name: 'AES-CBC', iv }, unwrappedKey, checkCipher);
+      console.log('Проверка распакованного ключа:', decoder.decode(checkPlain));
+
+
+      console.log('\n=== Задание 5: Цифровая подпись ECDSA ===');
+      const { publicKey, privateKey } = await crypto.subtle.generateKey(
+        { name: 'ECDSA', namedCurve: 'P-256' },
+        true,
+        ['sign', 'verify']
+      );
+      const signParams = { name: 'ECDSA', hash: 'SHA-256' };
+      const signature = await crypto.subtle.sign(signParams, privateKey, msgData);
+      console.log('Подпись (hex):', bufToHex(signature));
+      const isValid = await crypto.subtle.verify(signParams, publicKey, signature, msgData);
+      console.log('Проверка исходного сообщения:', isValid);
+      const tamperedData = encoder.encode(surname + '_FAKE');
+      const isTamperedValid = await crypto.subtle.verify(signParams, publicKey, signature, tamperedData);
+      console.log('Проверка изменённого сообщения:', isTamperedValid);
+      
+    })().catch(err => console.error('Ошибка:', err));
+  </script>
+</body>
+</html>
