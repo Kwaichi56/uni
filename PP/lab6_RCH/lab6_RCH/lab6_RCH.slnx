@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../DP10RCh_test/DP10RCh_test.csproj" />
+  <Project Path="../IRC/IRC.csproj" />
+  <Project Path="../RC/RC.csproj" />
+</Solution>
