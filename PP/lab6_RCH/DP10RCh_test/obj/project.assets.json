@@ -46,19 +46,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yudo\\.nuget\\packages\\": {}
+    "C:\\Users\\ThinkPad\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab6_RCH\\DP10RCh_test\\DP10RCh_test.csproj",
+      "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab6_RCH\\DP10RCh_test\\DP10RCh_test.csproj",
       "projectName": "DP10RCh_test",
-      "projectPath": "D:\\BSTU\\uni\\PP\\lab6_RCH\\DP10RCh_test\\DP10RCh_test.csproj",
-      "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
-      "outputPath": "D:\\BSTU\\uni\\PP\\lab6_RCH\\DP10RCh_test\\obj\\",
+      "projectPath": "D:\\BSTU\\Labs\\PP\\lab6_RCH\\DP10RCh_test\\DP10RCh_test.csproj",
+      "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+      "outputPath": "D:\\BSTU\\Labs\\PP\\lab6_RCH\\DP10RCh_test\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -73,11 +78,11 @@
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\BSTU\\uni\\PP\\lab6_RCH\\IRC\\IRC.csproj": {
-              "projectPath": "D:\\BSTU\\uni\\PP\\lab6_RCH\\IRC\\IRC.csproj"
+            "D:\\BSTU\\Labs\\PP\\lab6_RCH\\IRC\\IRC.csproj": {
+              "projectPath": "D:\\BSTU\\Labs\\PP\\lab6_RCH\\IRC\\IRC.csproj"
             },
-            "D:\\BSTU\\uni\\PP\\lab6_RCH\\RC\\RC.csproj": {
-              "projectPath": "D:\\BSTU\\uni\\PP\\lab6_RCH\\RC\\RC.csproj"
+            "D:\\BSTU\\Labs\\PP\\lab6_RCH\\RC\\RC.csproj": {
+              "projectPath": "D:\\BSTU\\Labs\\PP\\lab6_RCH\\RC\\RC.csproj"
             }
           }
         }

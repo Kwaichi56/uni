@@ -8,7 +8,7 @@ from PIL import Image
 
 nlp = spacy.load('ru_core_news_sm')
 
-with open('messages.txt', 'r', encoding='utf-8') as file:
+with open('search.txt', 'r', encoding='utf-8') as file:
     text = file.read()
 
 doc = nlp(text)

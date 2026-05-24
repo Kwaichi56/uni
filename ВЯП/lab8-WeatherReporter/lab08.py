@@ -16,7 +16,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from staticmap import StaticMap, CircleMarker
 
 
-BOT_TOKEN = ""
+BOT_TOKEN = "8602552123:AAEWcvWWhACG1k5MSgKbpm51DMbw3U4_F3A"
 
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher()
