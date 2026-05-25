@@ -4,8 +4,8 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
-#include <fstream>
 #include <iomanip>
+#include <ctime>
 
 using namespace std;
 
@@ -13,15 +13,9 @@ enum Direction { TOP, LEFT, LEFTTOP, NONE_DIR };
 
 string generateRandomLatinString(int length)
 {
-    static const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<int> dist(0, (int)alphabet.size() - 1);
-
     string s;
-    s.reserve(length);
     for (int i = 0; i < length; i++)
-        s += alphabet[dist(gen)];
+        s += char('A' + rand() % 26);
     return s;
 }
 
@@ -30,7 +24,7 @@ int min3(int a, int b, int c)
     return min(a, min(b, c));
 }
 
-// -------------------- Левенштейн: рекурсия --------------------
+
 int levenshteinRecursive(const string& x, const string& y, int lx, int ly)
 {
     if (lx == 0) return ly;
@@ -43,7 +37,7 @@ int levenshteinRecursive(const string& x, const string& y, int lx, int ly)
     );
 }
 
-// -------------------- Левенштейн: ДП --------------------
+
 int levenshteinDP(const string& x, const string& y, vector<vector<int>>& d)
 {
     int lx = (int)x.size();
@@ -72,21 +66,52 @@ int levenshteinDP(const string& x, const string& y, vector<vector<int>>& d)
 void printLevenshteinTable(const string& x, const string& y, const vector<vector<int>>& d)
 {
     cout << "\nТаблица Левенштейна:\n\n";
-    cout << setw(4) << " ";
-    cout << setw(4) << "#";
-    for (char c : y) cout << setw(4) << c;
+    cout << setw(6) << " ";
+    cout << setw(6) << "#";
+    for (char c : y) cout << setw(6) << c;
     cout << "\n";
 
     for (int i = 0; i <= (int)x.size(); i++)
     {
-        if (i == 0) cout << setw(4) << "#";
-        else cout << setw(4) << x[i - 1];
+        if (i == 0) cout << setw(6) << "#";
+        else cout << setw(6) << x[i - 1];
 
         for (int j = 0; j <= (int)y.size(); j++)
-            cout << setw(4) << d[i][j];
+            cout << setw(6) << d[i][j];
         cout << "\n";
     }
 }
+
+//int traceLevenshteinRecursive(const string& x, const string& y, int lx, int ly, int depth)
+//{
+//    string xs = x.substr(0, lx);
+//    string ys = y.substr(0, ly);
+//    string indent(depth * 2, ' ');
+//
+//    if (lx == 0)
+//    {
+//        cout << indent << "L(\"" << xs << "\", \"" << ys << "\") = " << ly << "\n";
+//        return ly;
+//    }
+//
+//    if (ly == 0)
+//    {
+//        cout << indent << "L(\"" << xs << "\", \"" << ys << "\") = " << lx << "\n";
+//        return lx;
+//    }
+//
+//    int a = traceLevenshteinRecursive(x, y, lx - 1, ly, depth + 1) + 1;
+//    int b = traceLevenshteinRecursive(x, y, lx, ly - 1, depth + 1) + 1;
+//    int c = traceLevenshteinRecursive(x, y, lx - 1, ly - 1, depth + 1) +
+//        (x[lx - 1] == y[ly - 1] ? 0 : 1);
+//
+//    int rc = min3(a, b, c);
+//
+//    cout << indent << "L(\"" << xs << "\", \"" << ys << "\") = min("
+//        << a << ", " << b << ", " << c << ") = " << rc << "\n";
+//
+//    return rc;
+//}
 
 // -------------------- LCS: рекурсия --------------------
 int lcsRecursive(const string& x, const string& y, int lenx, int leny)
@@ -160,23 +185,31 @@ void buildLCS(const string& x,
     }
 }
 
+string dirToString(Direction d)
+{
+    if (d == TOP) return "TOP";
+    if (d == LEFT) return "LEFT";
+    if (d == LEFTTOP) return "LEFTTOP";
+    return "-";
+}
+
 void printLCSTables(const string& x, const string& y,
     const vector<vector<int>>& C,
     const vector<vector<Direction>>& B)
 {
     cout << "\nМатрица C (длины LCS):\n\n";
-    cout << setw(6) << " ";
-    cout << setw(6) << "#";
-    for (char c : y) cout << setw(6) << c;
+    cout << setw(8) << " ";
+    cout << setw(8) << "#";
+    for (char c : y) cout << setw(8) << c;
     cout << "\n";
 
     for (int i = 0; i <= (int)x.size(); i++)
     {
-        if (i == 0) cout << setw(6) << "#";
-        else cout << setw(6) << x[i - 1];
+        if (i == 0) cout << setw(8) << "#";
+        else cout << setw(8) << x[i - 1];
 
         for (int j = 0; j <= (int)y.size(); j++)
-            cout << setw(6) << C[i][j];
+            cout << setw(8) << C[i][j];
         cout << "\n";
     }
 
@@ -195,11 +228,8 @@ void printLCSTables(const string& x, const string& y,
         {
             string cell = "-";
             if (i > 0 && j > 0)
-            {
-                if (B[i][j] == TOP) cell = "TOP";
-                else if (B[i][j] == LEFT) cell = "LEFT";
-                else if (B[i][j] == LEFTTOP) cell = "LEFTTOP";
-            }
+                cell = dirToString(B[i][j]);
+
             cout << setw(10) << cell;
         }
         cout << "\n";
@@ -219,8 +249,9 @@ double measureMs(Func f)
 int main()
 {
     setlocale(LC_ALL, "rus");
+    srand((unsigned)time(0));
 
-    // -------------------- Задание 1 --------------------
+    // 1
     string S1 = generateRandomLatinString(300);
     string S2 = generateRandomLatinString(200);
 
@@ -230,29 +261,32 @@ int main()
     cout << "Первые 50 символов S1: " << S1.substr(0, 50) << "\n";
     cout << "Первые 50 символов S2: " << S2.substr(0, 50) << "\n\n";
 
-    // -------------------- Задание 2 --------------------
+    // 2
     cout << "ЗАДАНИЕ 2\n";
+    vector<vector<int>> fullLevTable;
+    int levFullDP = levenshteinDP(S1, S2, fullLevTable);
+
     string s1small = S1.substr(0, 10);
     string s2small = S2.substr(0, 10);
 
-    vector<vector<int>> levTable;
+    vector<vector<int>> levSmallTable;
     int levRec = levenshteinRecursive(s1small, s2small, (int)s1small.size(), (int)s2small.size());
-    int levDp = levenshteinDP(s1small, s2small, levTable);
+    int levDpSmall = levenshteinDP(s1small, s2small, levSmallTable);
+
+    cout << "Для полных строк:\n";
+    cout << "ДП(S1, S2) = " << levFullDP << "\n\n";
 
     cout << "Для первых 10 символов:\n";
     cout << "Рекурсивно: " << levRec << "\n";
-    cout << "Динамическое программирование: " << levDp << "\n";
-    printLevenshteinTable(s1small, s2small, levTable);
+    cout << "Динамическое программирование: " << levDpSmall << "\n";
 
-    // -------------------- Задание 3 --------------------
+    printLevenshteinTable(s1small, s2small, levSmallTable);
+
+    // 3
     cout << "\nЗАДАНИЕ 3\n";
-    cout << "Сравнение времени Левенштейна:\n";
     cout << left << setw(8) << "n"
         << setw(20) << "Рекурсия, мс"
         << setw(20) << "ДП, мс" << "\n";
-
-    ofstream foutLev("levenshtein_times.csv");
-    foutLev << "n,recursion_ms,dp_ms\n";
 
     for (int n = 1; n <= 10; n++)
     {
@@ -273,12 +307,9 @@ int main()
         cout << left << setw(8) << n
             << setw(20) << tRec
             << setw(20) << tDp << "\n";
-
-        foutLev << n << "," << tRec << "," << tDp << "\n";
     }
-    foutLev.close();
 
-    // -------------------- Задание 4 --------------------
+    // 4
     cout << "\nЗАДАНИЕ 4\n";
     string word1 = "гора";
     string word2 = "вор";
@@ -290,7 +321,10 @@ int main()
     cout << "Расстояние Левенштейна = " << levVariant << "\n";
     printLevenshteinTable(word1, word2, levVariantTable);
 
-    // -------------------- Задание 5 --------------------
+    //cout << "\nХод рекурсивного вычисления для задания 4:\n";
+    //traceLevenshteinRecursive(word1, word2, (int)word1.size(), (int)word2.size(), 0);
+
+    // 5
     cout << "\nЗАДАНИЕ 5\n";
     string X = "ABHCSUV";
     string Y = "KIBOSV";
@@ -317,9 +351,6 @@ int main()
         << setw(20) << "Рекурсия, мс"
         << setw(20) << "ДП, мс" << "\n";
 
-    ofstream foutLCS("lcs_times.csv");
-    foutLCS << "n,recursion_ms,dp_ms\n";
-
     int maxN = min((int)X.size(), (int)Y.size());
     for (int n = 1; n <= maxN; n++)
     {
@@ -341,10 +372,7 @@ int main()
         cout << left << setw(8) << n
             << setw(20) << tRec
             << setw(20) << tDp << "\n";
-
-        foutLCS << n << "," << tRec << "," << tDp << "\n";
     }
-    foutLCS.close();
 
     return 0;
 }
