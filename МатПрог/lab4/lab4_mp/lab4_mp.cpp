@@ -113,7 +113,7 @@ void printLevenshteinTable(const string& x, const string& y, const vector<vector
 //    return rc;
 //}
 
-// -------------------- LCS: рекурсия --------------------
+// LCS: рекурсия
 int lcsRecursive(const string& x, const string& y, int lenx, int leny)
 {
     if (lenx == 0 || leny == 0) return 0;
@@ -127,7 +127,7 @@ int lcsRecursive(const string& x, const string& y, int lenx, int leny)
     );
 }
 
-// -------------------- LCS: ДП --------------------
+// LCS: ДП 
 int lcsDP(const string& x, const string& y,
     vector<vector<int>>& C,
     vector<vector<Direction>>& B)
