@@ -59,9 +59,9 @@ namespace combi
     void xcombination::reset()
     {
         this->nc = 0;
-        for (int i = 0; i < this->m; i++) this->sset[i] = i;
-        this->sset[m] = this->n;
-        this->sset[m + 1] = 0;
+        for (int i = 0; i < this->m; i++) this->sset[i] = i; //!!!!!!!!!
+        this->sset[m] = this->n; //!!!!!!!!
+        this->sset[m + 1] = 0;   //!!!!!!!!
     }
 
     short xcombination::getfirst()
