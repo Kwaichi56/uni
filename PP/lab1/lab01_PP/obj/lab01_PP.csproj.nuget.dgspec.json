@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSTU\\Labs\\PP\\lab1\\lab01_PP\\lab01_PP.csproj": {}
+    "D:\\BSTU\\uni\\PP\\lab1\\lab01_PP\\lab01_PP.csproj": {}
   },
   "projects": {
-    "D:\\BSTU\\Labs\\PP\\lab1\\DP001_lib\\DP001_lib.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab1\\DP001_lib\\DP001_lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab1\\DP001_lib\\DP001_lib.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab1\\DP001_lib\\DP001_lib.csproj",
         "projectName": "DP001_lib",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab1\\DP001_lib\\DP001_lib.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab1\\DP001_lib\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab1\\DP001_lib\\DP001_lib.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab1\\DP001_lib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -345,21 +341,17 @@
         }
       }
     },
-    "D:\\BSTU\\Labs\\PP\\lab1\\lab01_PP\\lab01_PP.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab1\\lab01_PP\\lab01_PP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab1\\lab01_PP\\lab01_PP.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab1\\lab01_PP\\lab01_PP.csproj",
         "projectName": "lab01_PP",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab1\\lab01_PP\\lab01_PP.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab1\\lab01_PP\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab1\\lab01_PP\\lab01_PP.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab1\\lab01_PP\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -374,8 +366,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\BSTU\\Labs\\PP\\lab1\\DP001_lib\\DP001_lib.csproj": {
-                "projectPath": "D:\\BSTU\\Labs\\PP\\lab1\\DP001_lib\\DP001_lib.csproj"
+              "D:\\BSTU\\uni\\PP\\lab1\\DP001_lib\\DP001_lib.csproj": {
+                "projectPath": "D:\\BSTU\\uni\\PP\\lab1\\DP001_lib\\DP001_lib.csproj"
               }
             }
           }
