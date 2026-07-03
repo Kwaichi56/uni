@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cqJnrhaPTRw=",
+  "dgSpecHash": "jdkTtZmRdNE=",
   "success": true,
   "projectFilePath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
   "expectedPackageFiles": [
@@ -29,5 +29,15 @@
     "C:\\Users\\ThinkPad\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
     "C:\\Users\\ThinkPad\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Произошла ошибка при получении данных уязвимости пакета: Не удалось загрузить индекс службы для источника https://api.nuget.org/v3/index.json.",
+      "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
+      "targetGraphs": []
+    }
+  ]
 }

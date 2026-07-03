@@ -10,7 +10,6 @@ public sealed class Repository : ICelebrity<Celebrity>
     public static string FullBasePath => Path.Combine(BasePath, DatabaseFileName);
 
     private readonly CelebrityContext _context;
-    private int _nChanges;
 
     private Repository(string basePath)
     {
@@ -44,37 +43,21 @@ public sealed class Repository : ICelebrity<Celebrity>
             return false;
 
         _context.Celebrities.Remove(celebrity);
-        _context.SaveChanges();
-        _nChanges++;
-        return true;
+        return SaveChanges() > 0;
     }
 
     public bool AddCelebrity(Celebrity celebrity)
     {
-        _context.Celebrities.Add(new Celebrity
-        {
-            Firstname = celebrity.Firstname,
-            Surname = celebrity.Surname,
-            PhotoPath = celebrity.PhotoPath
-        });
-        _context.SaveChanges();
-        _nChanges++;
-        return true;
+        celebrity.Id = 0;
+        _context.Celebrities.Add(celebrity);
+        return _context.SaveChanges() > 0;
     }
 
     public int AddCelebrityAndGetId(Celebrity celebrity)
     {
-        Celebrity entry = new Celebrity
-        {
-            Firstname = celebrity.Firstname,
-            Surname = celebrity.Surname,
-            PhotoPath = celebrity.PhotoPath
-        };
-
-        _context.Celebrities.Add(entry);
+        AddCelebrity(celebrity);
         _context.SaveChanges();
-        _nChanges++;
-        return entry.Id;
+        return celebrity.Id;
     }
 
     public bool UpdCelebrity(int id, Celebrity celebrity)
@@ -86,26 +69,19 @@ public sealed class Repository : ICelebrity<Celebrity>
         current.Firstname = celebrity.Firstname;
         current.Surname = celebrity.Surname;
         current.PhotoPath = celebrity.PhotoPath;
-        _context.SaveChanges();
-        _nChanges++;
-        return true;
+        return SaveChanges() > 0;
+  
     }
 
     public int GetCelebrityIdByName(string name)
     {
-        Celebrity? celebrity = _context.Celebrities
-            .AsNoTracking()
-            .AsEnumerable()
-            .FirstOrDefault(c => $"{c.Firstname}|{c.Surname}".Contains(name, StringComparison.OrdinalIgnoreCase));
-
-        return celebrity?.Id ?? -1;
+        Celebrity? c = _context.Celebrities.FirstOrDefault(c => c.Surname.Equals(name));
+        return c != null ? c.Id : -1;
     }
 
     public int SaveChanges()
     {
-        int result = _nChanges;
-        _nChanges = 0;
-        return result;
+        return _context.SaveChanges();
     }
 
     public void Dispose()

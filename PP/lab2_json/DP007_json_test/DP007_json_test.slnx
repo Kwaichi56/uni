@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../DP007_ICelebrity.lib/DP007_ICelebrity.lib.csproj" />
+  <Project Path="../DP007_json.lib/DP007_json.lib.csproj" />
+  <Project Path="DP007_json_test.csproj" />
+</Solution>

@@ -29,12 +29,11 @@ namespace DP007_json
     }
 
 
-
     public class Repository : ICelebrity<Celebrity> 
     {
         public static string JSONFileName = "celebrities.json"; 
-        public static string BasePath { get; private set; } 
-        public static string FullBasePath 
+        public string BasePath { get; private set; } 
+        public string FullBasePath 
         {
             get { return Path.Combine(BasePath, JSONFileName); }
         }
@@ -46,7 +45,6 @@ namespace DP007_json
         {
             return new Repository(basepath); 
         }
-
 
 
         private Repository(string basepath)
@@ -78,12 +76,10 @@ namespace DP007_json
         }
 
 
-
         public List<Celebrity> GetAllCelebrities() 
         {
-            return celebrities;
+            return celebrities.ToList();
         }
-
 
         public bool AddCelebrity(Celebrity celebrity) 
         {
@@ -93,8 +89,6 @@ namespace DP007_json
             return true;
         }
 
-
-
         public int AddCelebrityAndGetId(Celebrity celebrity)
         {
             int id = celebrities.Count > 0 ? celebrities.Max(c => c.Id) + 1 : 1;
@@ -102,8 +96,6 @@ namespace DP007_json
             NChanges++;
             return id;
         }
-
-
 
         public bool UpdCelebrity(int id, Celebrity celebrity)
         {
@@ -117,8 +109,6 @@ namespace DP007_json
             return false;
         }
 
-
-
         public bool DelCelebrity(int id)
         {
             int idx = celebrities.FindIndex(c => c.Id == id);
@@ -131,14 +121,10 @@ namespace DP007_json
             return false;
         }
 
-
-
         public Celebrity GetCelebrityById(int id)
         {
             return celebrities.FirstOrDefault(c => c.Id == id);
         }
-
-
 
         public int GetCelebrityIdByName(string name)
         {
@@ -172,7 +158,6 @@ namespace DP007_json
             NChanges = 0;
             return rc;
         }
-
 
         public void Dispose()
         {
