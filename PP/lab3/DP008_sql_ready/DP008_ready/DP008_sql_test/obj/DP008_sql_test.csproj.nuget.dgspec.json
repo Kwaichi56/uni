@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj": {}
+    "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj": {}
   },
   "projects": {
-    "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj",
         "projectName": "DP008_ICelebrity",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,25 +69,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj",
         "projectName": "DP008_sql",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -106,8 +98,8 @@
             "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
-                "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj"
+              "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
+                "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj"
               }
             }
           }
@@ -154,25 +146,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
         "projectName": "DP008_sql_test",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -187,11 +175,11 @@
             "framework": "net8.0",
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
-                "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj"
+              "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
+                "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj"
               },
-              "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj": {
-                "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj"
+              "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj": {
+                "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj"
               }
             }
           }
@@ -234,7 +222,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

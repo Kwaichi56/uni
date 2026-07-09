@@ -1226,24 +1226,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ThinkPad\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\yudo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
+      "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
       "projectName": "DP008_sql_test",
-      "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
-      "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-      "outputPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\obj\\",
+      "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\DP008_sql_test.csproj",
+      "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+      "outputPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql_test\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1258,11 +1253,11 @@
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
-              "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj"
+            "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj": {
+              "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_ICelebrity\\DP008_ICelebrity.csproj"
             },
-            "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj": {
-              "projectPath": "D:\\BSTU\\Labs\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj"
+            "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj": {
+              "projectPath": "D:\\BSTU\\uni\\PP\\lab3\\DP008_sql_ready\\DP008_ready\\DP008_sql\\DP008_sql.csproj"
             }
           }
         }
@@ -1305,16 +1300,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Произошла ошибка при получении данных уязвимости пакета: Не удалось загрузить индекс службы для источника https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj": {}
+    "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj": {}
   },
   "projects": {
-    "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj",
         "projectName": "DP007_ICelebrity.lib",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_ICelebrity.lib\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_ICelebrity.lib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -345,21 +341,17 @@
         }
       }
     },
-    "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj": {
+    "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj",
+        "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj",
         "projectName": "DP007_json.lib",
-        "projectPath": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj",
-        "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-        "outputPath": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_json.lib\\obj\\",
+        "projectPath": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_json.lib\\DP007_json.lib.csproj",
+        "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+        "outputPath": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_json.lib\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -374,8 +366,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj": {
-                "projectPath": "D:\\BSTU\\Labs\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj"
+              "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj": {
+                "projectPath": "D:\\BSTU\\uni\\PP\\lab2_json\\DP007_ICelebrity.lib\\DP007_ICelebrity.lib.csproj"
               }
             }
           }
@@ -412,7 +404,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

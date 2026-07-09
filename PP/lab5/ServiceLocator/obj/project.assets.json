@@ -8,24 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ThinkPad\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\yudo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BSTU\\Labs\\PP\\lab5\\ServiceLocator\\ServiceLocator.csproj",
+      "projectUniqueName": "D:\\BSTU\\uni\\PP\\lab5\\ServiceLocator\\ServiceLocator.csproj",
       "projectName": "ServiceLocator",
-      "projectPath": "D:\\BSTU\\Labs\\PP\\lab5\\ServiceLocator\\ServiceLocator.csproj",
-      "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
-      "outputPath": "D:\\BSTU\\Labs\\PP\\lab5\\ServiceLocator\\obj\\",
+      "projectPath": "D:\\BSTU\\uni\\PP\\lab5\\ServiceLocator\\ServiceLocator.csproj",
+      "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
+      "outputPath": "D:\\BSTU\\uni\\PP\\lab5\\ServiceLocator\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -74,7 +69,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
