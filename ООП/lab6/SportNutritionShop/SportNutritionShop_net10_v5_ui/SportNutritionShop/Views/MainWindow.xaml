@@ -1,0 +1,299 @@
+<Window x:Class="SportNutritionShop.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:models="clr-namespace:SportNutritionShop.Models"
+        xmlns:uc="clr-namespace:SportNutritionShop.UserControls"
+        Title="{DynamicResource AppTitle}"
+        Width="1440" Height="860" MinWidth="1180" MinHeight="720"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundBrush}"
+        Cursor="/Assets/Cursors/shop.cur"
+        ForceCursor="True"
+        Icon="/Assets/App.ico">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="White" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1" Padding="20,14">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="220"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                    <TextBlock Text="SPORT" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}"/>
+                    <TextBlock Text="NUTRITION" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource PrimaryBrush}"/>
+                </StackPanel>
+
+                <TextBox Grid.Column="1"
+                         Height="42"
+                         Margin="20,0,24,0"
+                         VerticalAlignment="Center"
+                         Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Content="&#8634;" ToolTip="{DynamicResource UndoButton}" Style="{StaticResource RoundIconButtonStyle}" Margin="0,0,8,0" Command="{Binding UndoCommand}"/>
+                    <Button Content="&#8635;" ToolTip="{DynamicResource RedoButton}" Style="{StaticResource RoundIconButtonStyle}" Margin="0,0,16,0" Command="{Binding RedoCommand}"/>
+                    <Button Content="RU" MinWidth="54" Margin="0,0,8,0" Command="{Binding ChangeLanguageRuCommand}"/>
+                    <Button Content="EN" MinWidth="54" Margin="0,0,12,0" Command="{Binding ChangeLanguageEnCommand}"/>
+                    <Button Content="{DynamicResource ProfileButton}" MinWidth="120" Margin="0,0,12,0" Click="Profile_Click"/>
+                    <Button Content="{DynamicResource LogoutButton}" MinWidth="110" Margin="0,0,16,0" Click="Logout_Click"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="3" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Border Style="{StaticResource HeaderBadgeStyle}" Margin="0,0,10,0">
+                        <TextBlock>
+                            <Run Text="{DynamicResource UserLabel}"/>
+                            <Run Text=": "/>
+                            <Run Text="{Binding CurrentUserName, Mode=OneWay}"/>
+                        </TextBlock>
+                    </Border>
+                    <Border Style="{StaticResource HeaderBadgeStyle}">
+                        <TextBlock>
+                            <Run Text="{DynamicResource RoleLabel}"/>
+                            <Run Text=": "/>
+                            <Run Text="{Binding CurrentRole, Mode=OneWay}"/>
+                        </TextBlock>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="280"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="360"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Style="{StaticResource CardBorderStyle}" Padding="18" Margin="0,0,16,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource FiltersTitle}" Style="{StaticResource SectionTitleTextStyle}"/>
+                        <TextBlock Text="{DynamicResource SearchLabel}" Margin="0,16,0,6"/>
+                        <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                        <TextBlock Text="{DynamicResource CategoryLabel}" Margin="0,14,0,6"/>
+                        <ComboBox ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Height="38"/>
+                        <TextBlock Text="{DynamicResource BrandLabel}" Margin="0,14,0,6"/>
+                        <ComboBox ItemsSource="{Binding Brands}" SelectedItem="{Binding SelectedBrand}" Height="38"/>
+                        <TextBlock Text="{DynamicResource MinPriceLabel}" Margin="0,14,0,6"/>
+                        <TextBox Text="{Binding MinPrice, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                        <TextBlock Text="{DynamicResource MaxPriceLabel}" Margin="0,14,0,6"/>
+                        <TextBox Text="{Binding MaxPrice, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                        <TextBlock Text="{DynamicResource SortLabel}" Margin="0,14,0,6"/>
+                        <ComboBox SelectedValuePath="Tag" SelectedValue="{Binding SelectedSort}" Height="38">
+                            <ComboBoxItem Tag="Name" Content="{DynamicResource SortByName}"/>
+                            <ComboBoxItem Tag="PriceAsc" Content="{DynamicResource SortByPriceAsc}"/>
+                            <ComboBoxItem Tag="PriceDesc" Content="{DynamicResource SortByPriceDesc}"/>
+                            <ComboBoxItem Tag="RatingDesc" Content="{DynamicResource SortByRatingDesc}"/>
+                        </ComboBox>
+                        <Button Content="{DynamicResource ResetFiltersButton}" Margin="0,18,0,0" Height="40" Command="{Binding ResetFiltersCommand}"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+
+            <Border Grid.Column="1" Style="{StaticResource CardBorderStyle}" Padding="18" Margin="0,0,16,0">
+                <DockPanel>
+                    <TextBlock DockPanel.Dock="Top" Text="{DynamicResource CatalogTitle}" Style="{StaticResource SectionTitleTextStyle}" Margin="0,0,0,14"/>
+                    <ListBox ItemsSource="{Binding ProductsView}"
+                             SelectedItem="{Binding SelectedProduct}"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Padding" Value="0"/>
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type models:Product}">
+                                <Border Style="{StaticResource ProductCardStyle}" MinHeight="220">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="190"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Border Grid.Column="0" CornerRadius="14" Background="#F5F8FC" Padding="12" Margin="0,0,18,0">
+                                            <Viewbox Stretch="Uniform">
+                                                <Image Source="{Binding ImagePath}" Width="120" Height="120"/>
+                                            </Viewbox>
+                                        </Border>
+
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Grid.Row="0" Text="{Binding ShortName}" Style="{StaticResource ProductTitleTextStyle}"/>
+
+                                            <TextBlock Grid.Row="1" Margin="0,6,0,0" Foreground="{DynamicResource MutedBrush}">
+                                                <Run Text="{Binding Brand}"/>
+                                                <Run Text=" • "/>
+                                                <Run Text="{Binding Category}"/>
+                                                <Run Text=" • "/>
+                                                <Run Text="{Binding Weight}"/>
+                                            </TextBlock>
+
+                                            <TextBlock Grid.Row="2"
+                                                       Text="{Binding Description}"
+                                                       TextWrapping="Wrap"
+                                                       TextTrimming="CharacterEllipsis"
+                                                       MaxHeight="48"
+                                                       Margin="0,12,0,12"
+                                                       Foreground="{DynamicResource MutedBrush}"/>
+
+                                            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                                <uc:RatingStars Rating="{Binding Rating, Mode=OneWay}" Margin="0,0,22,0"/>
+                                                <TextBlock>
+                                                    <Run Text="{DynamicResource StockLabel}"/>
+                                                    <Run Text=": "/>
+                                                    <Run Text="{Binding Quantity, Mode=OneWay}"/>
+                                                </TextBlock>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        <Grid Grid.Column="2" Margin="18,0,0,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <TextBlock Grid.Row="1"
+                                                       Text="{Binding FinalPrice, Mode=OneWay, StringFormat={}{0} BYN}"
+                                                       FontSize="24"
+                                                       FontWeight="Bold"
+                                                       Foreground="{DynamicResource PrimaryBrush}"
+                                                       HorizontalAlignment="Right"/>
+
+                                            <TextBlock Grid.Row="2"
+                                                       Text="{Binding Price, Mode=OneWay, StringFormat={}{0} BYN}"
+                                                       TextDecorations="Strikethrough"
+                                                       Foreground="{DynamicResource MutedBrush}"
+                                                       Visibility="{Binding DiscountPercent, Converter={StaticResource ZeroToCollapsedConverter}}"
+                                                       HorizontalAlignment="Right"/>
+
+                                            <Button Grid.Row="3"
+                                                    Content="{DynamicResource AddToCartButton}"
+                                                    Margin="0,14,0,0"
+                                                    Height="40"
+                                                    Visibility="{Binding DataContext.IsAdmin, RelativeSource={RelativeSource AncestorType=Window}, Mode=OneWay, Converter={StaticResource InverseBoolToVisibilityConverter}}"
+                                                    Command="{Binding DataContext.AddToCartCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                    CommandParameter="{Binding}"/>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+
+            <Grid Grid.Column="2">
+                <Border Style="{StaticResource CardBorderStyle}" Padding="18" Visibility="{Binding IsAdmin, Mode=OneWay, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Top" Text="{DynamicResource CartTitle}" Style="{StaticResource SectionTitleTextStyle}" Margin="0,0,0,12"/>
+                        <StackPanel DockPanel.Dock="Bottom" Margin="0,12,0,0">
+                            <TextBlock FontSize="18" FontWeight="SemiBold">
+                                <Run Text="{DynamicResource OrderTotalLabel}"/>
+                                <Run Text=": "/>
+                                <Run Text="{Binding CartTotal, Mode=OneWay}"/>
+                                <Run Text=" BYN"/>
+                            </TextBlock>
+                            <Button Content="{DynamicResource PlaceOrderButton}" Margin="0,12,0,0" Height="42" Command="{Binding PlaceOrderCommand}"/>
+                        </StackPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding CartItems}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type models:CartItem}">
+                                        <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" CornerRadius="12" Padding="12" Margin="0,0,0,10">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding Product.ShortName}" FontWeight="SemiBold"/>
+                                                    <TextBlock Foreground="{DynamicResource MutedBrush}">
+                                                        <Run Text="{Binding Product.Brand}"/>
+                                                        <Run Text=" • "/>
+                                                        <Run Text="{Binding Product.FinalPrice, Mode=OneWay}"/>
+                                                        <Run Text=" BYN"/>
+                                                    </TextBlock>
+                                                    <TextBlock>
+                                                        <Run Text="{DynamicResource QuantityLabel}"/>
+                                                        <Run Text=": "/>
+                                                        <Run Text="{Binding Quantity, Mode=OneWay}"/>
+                                                    </TextBlock>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                                                    <Button Content="-" Width="32" Command="{Binding DataContext.DecreaseCartCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
+                                                    <Button Content="+" Width="32" Margin="6,0,0,0" Command="{Binding DataContext.IncreaseCartCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
+                                                    <Button Content="×" Width="32" Margin="6,0,0,0" Background="{DynamicResource DangerBrush}" Command="{Binding DataContext.RemoveFromCartCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </DockPanel>
+                </Border>
+
+                <Border Style="{StaticResource CardBorderStyle}" Padding="18" Visibility="{Binding IsAdmin, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Style="{StaticResource SectionTitleTextStyle}" VerticalAlignment="Center" FontSize="18"><Run Language="ru-ru" Text="Панель управления"/></TextBlock>
+                                <Button Content="{DynamicResource AddProductButton}" Style="{StaticResource AccentButtonStyle}" MinWidth="120" Command="{Binding AddProductCommand}" Margin="181,0,4,0"/>
+                            </Grid>
+                            <TextBlock Text="{DynamicResource ShortNameLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.ShortName, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource FullNameLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.FullName, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource DescriptionLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Description, UpdateSourceTrigger=PropertyChanged}" Height="80" AcceptsReturn="True" TextWrapping="Wrap"/>
+                            <TextBlock Text="{DynamicResource CategoryLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Category, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource BrandLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Brand, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource CountryLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Country, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource FlavorLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Flavor, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource WeightLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Weight, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource PriceLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Price, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource DiscountLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.DiscountPercent, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource QuantityLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Quantity, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource RatingLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.Rating, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <TextBlock Text="{DynamicResource ImagePathLabel}" Margin="0,14,0,6"/>
+                            <TextBox Text="{Binding SelectedProduct.ImagePath, UpdateSourceTrigger=PropertyChanged}" Height="38"/>
+                            <WrapPanel Margin="0,18,0,0">
+                                <Button Content="{DynamicResource DeleteProductButton}" MinWidth="120" Margin="0,0,8,0" Background="{DynamicResource DangerBrush}" Command="{Binding DeleteProductCommand}"/>
+                                <Button Content="{DynamicResource SaveButton}" MinWidth="120" Command="{Binding SaveProductsCommand}"/>
+                            </WrapPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
