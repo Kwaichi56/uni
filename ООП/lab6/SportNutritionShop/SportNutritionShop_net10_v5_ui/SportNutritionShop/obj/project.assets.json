@@ -8,19 +8,24 @@
     "net10.0-windows": []
   },
   "packageFolders": {
-    "C:\\Users\\yudo\\.nuget\\packages\\": {}
+    "C:\\Users\\ThinkPad\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yudo\\Downloads\\SportNutritionShop\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\SportNutritionShop.csproj",
+      "projectUniqueName": "D:\\BSTU\\Labs\\ООП\\lab6\\SportNutritionShop\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\SportNutritionShop.csproj",
       "projectName": "SportNutritionShop",
-      "projectPath": "C:\\Users\\yudo\\Downloads\\SportNutritionShop\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\SportNutritionShop.csproj",
-      "packagesPath": "C:\\Users\\yudo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yudo\\Downloads\\SportNutritionShop\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\obj\\",
+      "projectPath": "D:\\BSTU\\Labs\\ООП\\lab6\\SportNutritionShop\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\SportNutritionShop.csproj",
+      "packagesPath": "C:\\Users\\ThinkPad\\.nuget\\packages\\",
+      "outputPath": "D:\\BSTU\\Labs\\ООП\\lab6\\SportNutritionShop\\SportNutritionShop_net10_v5_ui\\SportNutritionShop\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\yudo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ThinkPad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -72,7 +77,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
