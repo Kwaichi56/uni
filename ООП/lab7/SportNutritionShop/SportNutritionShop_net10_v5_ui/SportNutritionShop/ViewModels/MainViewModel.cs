@@ -52,8 +52,8 @@ namespace SportNutritionShop.ViewModels
         public ICommand ResetFiltersCommand { get; }
         public ICommand ChangeLanguageRuCommand { get; }
         public ICommand ChangeLanguageEnCommand { get; }
-        public ICommand UndoCommand { get; }
-        public ICommand RedoCommand { get; }
+        public RelayCommand UndoCommand { get; }
+        public RelayCommand RedoCommand { get; }
         private readonly UndoRedoManager _undoRedo = new();
 
         public MainViewModel(UserRole role, string userName)
@@ -79,6 +79,11 @@ namespace SportNutritionShop.ViewModels
             ChangeLanguageEnCommand = new RelayCommand(_ => { LocalizationService.ChangeLanguage("en-US"); ResetFilters(); LoadFilterCollections(); });
             UndoCommand = new RelayCommand(_ => _undoRedo.Undo(), _ => _undoRedo.CanUndo);
             RedoCommand = new RelayCommand(_ => _undoRedo.Redo(), _ => _undoRedo.CanRedo);
+            _undoRedo.HistoryChanged += (_, _) =>
+            {
+                UndoCommand.RaiseCanExecuteChanged();
+                RedoCommand.RaiseCanExecuteChanged();
+            };
         }
 
         private string T(string key) => Application.Current.TryFindResource(key)?.ToString() ?? key;

@@ -45,7 +45,8 @@
                     <Button Content="Обновить" Margin="0,0,8,8" Command="{Binding RefreshCommand}"/>
                     <Button Content="Добавить строку" Margin="0,0,8,8" Command="{Binding AddRowCommand}"/>
                     <Button Content="Удалить строку" Margin="0,0,8,8" Background="{DynamicResource DangerBrush}" Command="{Binding DeleteRowCommand}"/>
-                    <Button Content="Сохранить транзакцию" Margin="0,0,8,8" Style="{StaticResource AccentButtonStyle}" Command="{Binding SaveCommand}"/>
+                    <Button Content="Сохранить транзакцию" Margin="0,0,8,8" Style="{StaticResource AccentButtonStyle}"
+                            IsEnabled="{Binding CanEdit}" Click="Save_Click"/>
                     <Button Content="Сортировать ↑" Margin="0,0,8,8" Command="{Binding SortAscendingCommand}"/>
                     <Button Content="Сортировать ↓" Margin="0,0,8,8" Command="{Binding SortDescendingCommand}"/>
                     <Button Content="Малый остаток" Margin="0,0,8,8" Command="{Binding LowStockCommand}"/>

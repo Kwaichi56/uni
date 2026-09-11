@@ -280,8 +280,6 @@ public static class DatabaseService
         command.CommandText = $"SELECT * FROM [{tableName}] ORDER BY Id DESC;";
         await using var reader = await command.ExecuteReaderAsync();
         table.Load(reader);
-        if (table.Columns.Contains("Id"))
-            table.PrimaryKey = [table.Columns["Id"]!];
         table.AcceptChanges();
         return table;
     }

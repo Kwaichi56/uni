@@ -9,12 +9,14 @@ namespace SportNutritionShop.Helpers
 
         public bool CanUndo => _undoStack.Count > 0;
         public bool CanRedo => _redoStack.Count > 0;
+        public event EventHandler? HistoryChanged;
 
         public void ExecuteAction(IUndoableAction action)
         {
             action.Do();
             _undoStack.Push(action);
             _redoStack.Clear();
+            HistoryChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public void Undo()
@@ -23,6 +25,7 @@ namespace SportNutritionShop.Helpers
             var action = _undoStack.Pop();
             action.Undo();
             _redoStack.Push(action);
+            HistoryChanged?.Invoke(this, EventArgs.Empty);
         }
 
         public void Redo()
@@ -31,6 +34,7 @@ namespace SportNutritionShop.Helpers
             var action = _redoStack.Pop();
             action.Do();
             _undoStack.Push(action);
+            HistoryChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

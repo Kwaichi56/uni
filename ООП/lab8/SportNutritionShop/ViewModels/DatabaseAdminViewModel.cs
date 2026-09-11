@@ -14,6 +14,7 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
     private DataRowView? _selectedRow;
     private DatabaseTableInfo _selectedTable;
     private bool _isBusy;
+    private bool _isResultView;
     private string _status = "Готово";
 
     public DatabaseAdminViewModel()
@@ -42,10 +43,11 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
     }
 
     public ObservableCollection<DatabaseTableInfo> Tables { get; }
+    public ObservableCollection<CategoryOption> CategoryOptions { get; } = new();
     public DataView? CurrentView { get => _currentView; private set { _currentView = value; OnPropertyChanged(); } }
     public DataRowView? SelectedRow { get => _selectedRow; set { _selectedRow = value; OnPropertyChanged(); CommandManager.InvalidateRequerySuggested(); } }
     public DatabaseTableInfo SelectedTable { get => _selectedTable; private set { _selectedTable = value; OnPropertyChanged(); OnPropertyChanged(nameof(CanEdit)); } }
-    public bool CanEdit => SelectedTable.IsEditable && !IsBusy;
+    public bool CanEdit => SelectedTable.IsEditable && !IsBusy && !_isResultView;
     public bool IsBusy { get => _isBusy; private set { _isBusy = value; OnPropertyChanged(); OnPropertyChanged(nameof(CanEdit)); CommandManager.InvalidateRequerySuggested(); } }
     public string Status { get => _status; private set { _status = value; OnPropertyChanged(); } }
     public string DatabasePath => DatabaseService.DatabasePath;
@@ -60,7 +62,13 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
     public ICommand LowStockCommand { get; }
     public ICommand StoredCommand { get; }
 
-    public Task InitializeAsync() => LoadCurrentTableAsync();
+    public async Task InitializeAsync()
+    {
+        await LoadCategoryOptionsAsync();
+        await LoadCurrentTableAsync();
+    }
+
+    public Task SaveChangesAsync() => SaveAsync();
 
     private async Task SelectTableAsync(string? name)
     {
@@ -75,6 +83,8 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
         await RunAsync(async () =>
         {
             var table = await DatabaseService.LoadTableAsync(SelectedTable.Name);
+            _isResultView = false;
+            OnPropertyChanged(nameof(CanEdit));
             CurrentView = table.DefaultView;
             SelectedRow = CurrentView.Count > 0 ? CurrentView[0] : null;
             Status = $"Таблица «{SelectedTable.DisplayName}»: {CurrentView.Count} записей";
@@ -85,8 +95,6 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
     {
         if (CurrentView?.Table is not DataTable table) return;
         var row = table.NewRow();
-        if (table.Columns.Contains("Id"))
-            row["Id"] = -DateTime.Now.Ticks;
 
         switch (SelectedTable.Name)
         {
@@ -103,7 +111,7 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
                 row["Phone"] = string.Empty;
                 break;
             case "Products":
-                row["CategoryId"] = 1L;
+                row["CategoryId"] = CategoryOptions.FirstOrDefault()?.Id ?? 1L;
                 row["ShortName"] = "Новый товар";
                 row["FullName"] = "Полное название нового товара";
                 row["Description"] = "Описание";
@@ -141,6 +149,8 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
         {
             await DatabaseService.SaveTableAsync(SelectedTable.Name, table);
             Status = "Изменения сохранены в транзакции.";
+            if (SelectedTable.Name == "Categories")
+                await LoadCategoryOptionsAsync();
             await LoadCurrentTableCoreAsync();
         });
     }
@@ -161,6 +171,8 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
         await RunAsync(async () =>
         {
             var table = await DatabaseService.GetLowStockAsync(DatabaseService.LowStockLimit);
+            _isResultView = true;
+            OnPropertyChanged(nameof(CanEdit));
             CurrentView = table.DefaultView;
             SelectedRow = CurrentView.Count > 0 ? CurrentView[0] : null;
             Status = $"Выполнен асинхронный параметризованный запрос: остаток не более {DatabaseService.LowStockLimit}.";
@@ -172,6 +184,8 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
         await RunAsync(async () =>
         {
             var table = await DatabaseService.ExecuteStoredCommandAsync("sp_ProductStatistics");
+            _isResultView = true;
+            OnPropertyChanged(nameof(CanEdit));
             CurrentView = table.DefaultView;
             SelectedRow = CurrentView.Count > 0 ? CurrentView[0] : null;
             Status = "Выполнена именованная команда sp_ProductStatistics (SQLite-аналог процедуры).";
@@ -181,8 +195,18 @@ public sealed class DatabaseAdminViewModel : BaseViewModel
     private async Task LoadCurrentTableCoreAsync()
     {
         var table = await DatabaseService.LoadTableAsync(SelectedTable.Name);
+        _isResultView = false;
+        OnPropertyChanged(nameof(CanEdit));
         CurrentView = table.DefaultView;
         SelectedRow = CurrentView.Count > 0 ? CurrentView[0] : null;
+    }
+
+    private async Task LoadCategoryOptionsAsync()
+    {
+        var categories = await DatabaseService.LoadTableAsync("Categories");
+        CategoryOptions.Clear();
+        foreach (DataRow row in categories.Rows)
+            CategoryOptions.Add(new CategoryOption(Convert.ToInt64(row["Id"]), row["Name"].ToString() ?? string.Empty));
     }
 
     private async Task RunAsync(Func<Task> action)
