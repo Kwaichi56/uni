@@ -18,10 +18,6 @@ namespace SportNutritionShop.Views
             _userName = userName;
             DataContext = new MainViewModel(role, userName);
 
-            // Демонстрация RoutedEvent:
-            // - Direct (RatingChanged) — НЕ достигает родителя (подписка ниже не сработает)
-            // - Tunnel (PreviewRangeChanged) — достигает Window первым (идёт сверху вниз)
-            // - Bubble (RangeChanged) — достигает Window последним (идёт снизу вверх)
             AddHandler(PriceRangeSlider.PreviewRangeChangedEvent, (RoutedEventHandler)OnPreviewRange);
             AddHandler(PriceRangeSlider.RangeChangedEvent, (RoutedEventHandler)OnRangeChanged);
             AddHandler(RatingStars.RatingChangedEvent, (RoutedEventHandler)OnRatingChanged);
@@ -40,7 +36,7 @@ namespace SportNutritionShop.Views
             Close();
         }
 
-        // ===== Обработчики RoutedUICommand SaveCartCommand =====
+        
         private void SaveCart_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             if (DataContext is MainViewModel vm) vm.SaveCart();
@@ -51,14 +47,14 @@ namespace SportNutritionShop.Views
             e.CanExecute = DataContext is MainViewModel vm && vm.CartItems.Any();
         }
 
-        // ===== Загрузка сохранённой корзины из ComboBox =====
+       
         private void SavedCart_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is MainViewModel vm && vm.SelectedSavedCart != null)
                 vm.LoadSavedCart(vm.SelectedSavedCart);
         }
 
-        // ===== Демонстрация маршрутизации RoutedEvent =====
+        
         private void OnPreviewRange(object sender, RoutedEventArgs e) =>
             Debug.WriteLine("[Tunnel]  PreviewRangeChanged достиг Window");
 

@@ -3,11 +3,6 @@ using System.Windows.Controls;
 
 namespace SportNutritionShop.UserControls
 {
-    /// <summary>
-    /// Пользовательский элемент управления: выбор диапазона цен через два ползунка.
-    /// DependencyProperty: MinPrice/MaxPrice (только числа, с взаимной коррекцией).
-    /// События: PreviewRangeChanged (Tunnel) и RangeChanged (Bubble).
-    /// </summary>
     public partial class PriceRangeSlider : UserControl
     {
         public static readonly DependencyProperty MinPriceProperty =
@@ -23,7 +18,7 @@ namespace SportNutritionShop.UserControls
                 nameof(MaxPrice),
                 typeof(string),
                 typeof(PriceRangeSlider),
-                new FrameworkPropertyMetadata("1000", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnRangeChanged, CoerceMaxPrice),
+                new FrameworkPropertyMetadata("200", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, OnRangeChanged, CoerceMaxPrice),
                 ValidateNumber);
 
         public string MinPrice { get => (string)GetValue(MinPriceProperty); set => SetValue(MinPriceProperty, value); }
@@ -61,14 +56,14 @@ namespace SportNutritionShop.UserControls
         {
             InitializeComponent();
             MinSlider.Value = 0;
-            MaxSlider.Value = 1000;
+            MaxSlider.Value = 200;
         }
 
-        // Валидация: только число (или пустая строка)
+        
         private static bool ValidateNumber(object value) =>
             value is string s && (string.IsNullOrEmpty(s) || double.TryParse(s, out _));
 
-        // Коррекция: MinPrice не может превышать MaxPrice
+      
         private static object CoerceMinPrice(DependencyObject d, object baseValue)
         {
             if (d is PriceRangeSlider c &&
@@ -78,7 +73,7 @@ namespace SportNutritionShop.UserControls
             return baseValue;
         }
 
-        // Коррекция: MaxPrice не может быть меньше MinPrice
+        
         private static object CoerceMaxPrice(DependencyObject d, object baseValue)
         {
             if (d is PriceRangeSlider c &&

@@ -5,12 +5,7 @@ using System.Windows.Media.Effects;
 
 namespace SportNutritionShop.UserControls
 {
-    /// <summary>
-    /// Пользовательский элемент управления: отображает рейтинг товара в виде звёзд.
-    /// Свойство зависимости Rating валидируется (0..5) через ValidateValueCallback
-    /// и корректируется через CoerceValueCallback.
-    /// Событие RatingChanged — Direct-маршрутизация (срабатывает только на самом контроле).
-    /// </summary>
+
     public partial class RatingStars : UserControl
     {
         public static readonly DependencyProperty RatingProperty =
@@ -49,11 +44,11 @@ namespace SportNutritionShop.UserControls
             BuildStars();
         }
 
-        // Валидация: рейтинг только в диапазоне 0..5
+        
         private static bool ValidateRating(object value) =>
             value is double d && d >= 0 && d <= 5;
 
-        // Коррекция: ограничиваем значение в диапазоне 0..5
+
         private static object CoerceRating(DependencyObject d, object baseValue)
         {
             double v = (double)baseValue;
