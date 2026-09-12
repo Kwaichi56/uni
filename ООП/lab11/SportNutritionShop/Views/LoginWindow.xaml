@@ -1,0 +1,29 @@
+<Window x:Class="SportNutritionShop.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource LoginTitle}"
+        Width="440"
+        Height="320"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundBrush}"
+        Cursor="/Assets/Cursors/shop.cur"
+        ForceCursor="True"
+        Icon="/Assets/App.ico">
+    <Grid Margin="24">
+        <Border Style="{StaticResource CardBorderStyle}" Padding="24">
+            <StackPanel>
+                <TextBlock Text="{DynamicResource LoginTitle}" Style="{StaticResource PageTitleTextStyle}" Margin="0,0,0,16"/>
+                <TextBlock Text="{DynamicResource LoginLabel}" Margin="0,0,0,6"/>
+                <TextBox Height="38" Margin="0,0,0,12" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="{DynamicResource PasswordLabel}" Margin="0,0,0,6"/>
+                <PasswordBox x:Name="PasswordBox" Height="38" Margin="0,0,0,18" PasswordChanged="PasswordBox_PasswordChanged"/>
+                <TextBlock Text="{DynamicResource DemoCredentials}" Foreground="{DynamicResource MutedBrush}" Margin="0,0,0,18"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Content="{DynamicResource ExitButton}" Width="100" Margin="0,0,8,0" Command="{Binding ExitCommand}"/>
+                    <Button Content="{DynamicResource LoginButton}" Width="120" IsDefault="True" Command="{Binding LoginCommand}"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

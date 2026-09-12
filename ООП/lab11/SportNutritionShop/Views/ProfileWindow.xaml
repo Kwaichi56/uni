@@ -1,0 +1,53 @@
+<Window x:Class="SportNutritionShop.Views.ProfileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource ProfileTitle}"
+        Width="480"
+        Height="560"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BackgroundBrush}"
+        Cursor="/Assets/Cursors/shop.cur"
+        ForceCursor="True"
+        Icon="/Assets/App.ico">
+    <Grid Margin="24">
+        <Border Style="{StaticResource CardBorderStyle}" Padding="24">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource ProfileTitle}" Style="{StaticResource PageTitleTextStyle}" Margin="0,0,0,16"/>
+
+                    <TextBlock Text="{DynamicResource FirstNameLabel}" Margin="0,0,0,6"/>
+                    <TextBox Height="38" Margin="0,0,0,12" Text="{Binding Profile.FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Text="{DynamicResource LastNameLabel}" Margin="0,0,0,6"/>
+                    <TextBox Height="38" Margin="0,0,0,12" Text="{Binding Profile.LastName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Text="{DynamicResource EmailLabel}" Margin="0,0,0,6"/>
+                    <TextBox Height="38" Margin="0,0,0,12" Text="{Binding Profile.Email, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Text="{DynamicResource PhoneLabel}" Margin="0,0,0,6"/>
+                    <TextBox Height="38" Margin="0,0,0,18" Text="{Binding Profile.Phone, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Text="{DynamicResource LanguageLabel}" Margin="0,0,0,6"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,18">
+                        <RadioButton Content="RU" GroupName="Language" Style="{StaticResource ChipRadioButtonStyle}" IsChecked="{Binding LanguageRu}"/>
+                        <RadioButton Content="EN" GroupName="Language" Style="{StaticResource ChipRadioButtonStyle}" IsChecked="{Binding LanguageEn}"/>
+                    </StackPanel>
+
+                    <TextBlock Text="{DynamicResource ThemeLabel}" Margin="0,0,0,6"/>
+                    <WrapPanel Margin="0,0,0,18">
+                        <RadioButton Content="{DynamicResource ThemeClassic}" GroupName="Theme" Style="{StaticResource ChipRadioButtonStyle}" IsChecked="{Binding ThemeClassic}"/>
+                        <RadioButton Content="{DynamicResource ThemeOptimistic}" GroupName="Theme" Style="{StaticResource ChipRadioButtonStyle}" IsChecked="{Binding ThemeOptimistic}"/>
+                        <RadioButton Content="{DynamicResource ThemePink}" GroupName="Theme" Style="{StaticResource ChipRadioButtonStyle}" IsChecked="{Binding ThemePink}"/>
+                        <RadioButton Content="{DynamicResource ThemeGrayscale}" GroupName="Theme" Style="{StaticResource ChipRadioButtonStyle}" IsChecked="{Binding ThemeGrayscale}"/>
+                    </WrapPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="{DynamicResource CloseButton}" MinWidth="100" Margin="0,0,8,0" Command="{Binding CloseCommand}"/>
+                        <Button Content="{DynamicResource SaveButton}" MinWidth="120" Command="{Binding SaveCommand}"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>

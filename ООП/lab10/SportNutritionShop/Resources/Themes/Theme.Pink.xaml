@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Розовая тема -->
+    <SolidColorBrush x:Key="PrimaryBrush" Color="#E0559C"/>
+    <SolidColorBrush x:Key="PrimaryDarkBrush" Color="#B23C7B"/>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#FDF1F7"/>
+    <SolidColorBrush x:Key="CardBrush" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="#F5CDE2"/>
+    <SolidColorBrush x:Key="MutedBrush" Color="#96617D"/>
+    <SolidColorBrush x:Key="DangerBrush" Color="#D9534F"/>
+    <SolidColorBrush x:Key="SuccessBrush" Color="#4CAF7D"/>
+</ResourceDictionary>
